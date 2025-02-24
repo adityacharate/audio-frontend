@@ -1,0 +1,41 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #181818;
+    padding: 15px 20px;
+    color: white;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #282828;
+    padding: 8px;
+    border-radius: 20px;
+    width: 300px;
+  }
+  
+  .search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    margin-left: 10px;
+    width: 100%;
+  }
+  
+  .search-icon {
+    color: #1db954;
+  }
+  
+  .profile-icon {
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .profile-icon:hover {
+    color: #1db954;
+  }
+  
