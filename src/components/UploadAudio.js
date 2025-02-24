@@ -19,9 +19,13 @@ const UploadAudio = () => {
     formData.append("audio", file);
 
     try {
-      const response = await axios.post("http://localhost:10000/upload", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/upload`,
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
 
       setMessage(response.data.message);
     } catch (error) {
