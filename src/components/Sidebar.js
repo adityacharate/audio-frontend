@@ -1,23 +1,25 @@
-import React from "react";
-import { FaHome, FaMusic, FaUpload } from "react-icons/fa";
+import React, { useState } from "react";
 import "./Sidebar.css";
 
-function Sidebar() {
+function Sidebar({ onSectionChange }) {
+  const [active, setActive] = useState("library"); // Default active section
+
+  const handleClick = (section) => {
+    setActive(section);
+    onSectionChange(section);  // Notify parent (App.js)
+  };
+
   return (
     <div className="sidebar">
-      <div className="logo">🎵 MyMusic</div>
-      <ul className="menu">
-        <li>
-          <FaHome className="icon" />
-          Home
+      <ul>
+        <li className={active === "library" ? "active" : ""} onClick={() => handleClick("library")}>
+          Music Library
         </li>
-        <li>
-          <FaMusic className="icon" />
-          Library
-        </li>
-        <li>
-          <FaUpload className="icon" />
+        <li className={active === "upload" ? "active" : ""} onClick={() => handleClick("upload")}>
           Upload
+        </li>
+        <li className={active === "player" ? "active" : ""} onClick={() => handleClick("player")}>
+          Player
         </li>
       </ul>
     </div>
